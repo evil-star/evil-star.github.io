@@ -10,5 +10,6 @@ h1{
 	color: white;
 }
 img{
-	margin: auto;
+	display: block;
+	text-align: center;
 }
