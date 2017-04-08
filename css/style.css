@@ -1,7 +1,12 @@
 body{
 	margin: 0;
+	background: #441fa8;
+	font-family: Arial, sans-serif;
 }
 h1{
 	text-align: center;
 	padding-top: 20%;
+	text-transform: uppercase;
+	color: white;
+
 }
