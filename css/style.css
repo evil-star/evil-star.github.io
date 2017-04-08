@@ -5,8 +5,10 @@ body{
 }
 h1{
 	text-align: center;
-	padding-top: 20%;
+	padding-top: 10%;
 	text-transform: uppercase;
 	color: white;
-
+}
+img{
+	margin: auto;
 }
