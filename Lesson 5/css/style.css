@@ -1,0 +1,209 @@
+@font-face {
+    font-family: 'CrimsonTextRoman';
+    src: url('fonts/CrimsonTextRoman.eot');
+    src: url('fonts/CrimsonTextRoman.eot') format('embedded-opentype'),
+         url('fonts/CrimsonTextRoman.woff2') format('woff2'),
+         url('fonts/CrimsonTextRoman.woff') format('woff'),
+         url('fonts/CrimsonTextRoman.ttf') format('truetype'),
+         url('fonts/CrimsonTextRoman.svg#CrimsonTextRoman') format('svg');
+}
+@font-face {
+    font-family: 'MontserratBlack';
+    src: url('fonts/MontserratBlack.eot');
+    src: url('fonts/MontserratBlack.eot') format('embedded-opentype'),
+         url('fonts/MontserratBlack.woff2') format('woff2'),
+         url('fonts/MontserratBlack.woff') format('woff'),
+         url('fonts/MontserratBlack.ttf') format('truetype'),
+         url('fonts/MontserratBlack.svg#MontserratBlack') format('svg');
+}
+@font-face {
+    font-family: 'MontserratRegular';
+    src: url('fonts/MontserratRegular.eot');
+    src: url('fonts/MontserratRegular.eot') format('embedded-opentype'),
+         url('fonts/MontserratRegular.woff2') format('woff2'),
+         url('fonts/MontserratRegular.woff') format('woff'),
+         url('fonts/MontserratRegular.ttf') format('truetype'),
+         url('fonts/MontserratRegular.svg#MontserratRegular') format('svg');
+}
+*{
+	box-sizing: border-box;
+}
+a{
+	color: inherit;
+}
+body{
+	margin: 0;
+	font-family: 'MontserratRegular';
+	color:  #343e5b;
+}
+ul{
+	margin: 0;
+}
+hr{
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+.wrapper{
+	width: 1170px;
+	margin: auto;
+}
+.nav li{
+	display: inline-block;
+}
+
+/* header top */
+
+.header-top{
+	padding: 30px 0 30px 0;
+}
+.header-top__nav{
+	padding: 0;
+	display: inline-block;
+	margin-left: 195px;
+}
+.header-top__li{
+	font-size: 14px;
+	padding: 0 12.5px 0 12.5px;
+	color:  #343e5b;
+}
+.basket{
+	display: inline-block;
+	font-size: 11px;
+}
+.basket__cart-ico{
+	position: relative;
+	top: 5px;
+	margin-left: 150px;
+}
+.basket__p{
+	display: inline-block;
+	padding: 0 5px 0 5px;
+}
+.basket__count{
+	display: inline-block;
+	background: #e3e8f0;
+	width: 25px;
+	height: 25px;
+	border-radius: 12px;
+	text-align: center;
+	line-height: 25px;
+}
+.sign-in{
+	display: inline-block;
+	margin-left: 25px;
+}
+.sign-in__p{
+	color:  #343e5b;
+}
+.sign-in__p:hover{
+	text-decoration: underline;
+}
+.sign-in__button{
+	border: 3px solid #e3e8f0;
+	padding: 0 20px 0 20px;
+	font-size: 11px;
+	line-height: 30px;
+}
+.button{
+	border-radius: 16px;
+}
+
+/* header-bottom-menu */
+.header-bottom-menu_light-grey-text{
+	text-transform: uppercase;
+	color: #b9bed1;
+	font-size: 11px;
+}
+.header-bottom-menu__nav{
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	padding: 25px 0 25px 0;
+}
+.header-bottom-menu__li{
+	padding-right: 30px;
+}
+.header-bottom-menu__li:hover{
+	color: #343e5c;
+}
+aside{
+	display: inline-block;
+}
+.header-bottom-menu__p{
+	display: inline-block;
+	margin: 0 0 0 383px;
+	padding: 25px 30px 25px 30px;
+	border-right: 1px solid #f0f2f7;
+}
+.search{
+	display:inline-block;
+	padding: 23px 30px;
+	border-right: 1px solid #f0f2f7;
+}
+.search__input{
+	width: 100px;
+	border: none;
+	padding: 0;
+	padding-left: 10px;
+}
+.search__input:focus{
+	outline: none;
+}
+::-webkit-input-placeholder { color: #a1a8bd; }
+:-ms-input-placeholder { color: #a1a8bd; }
+::-ms-input-placeholder { color: #a1a8bd; }
+::placeholder { color: #a1a8bd; } 
+
+/* Content */
+
+section{
+	background: #1c1e23;
+}
+.content{
+	height: 500px;
+	overflow: hidden;
+}
+.content_white-text{
+	color: white;
+}
+.content_big-text{
+	font-family: MontserratBlack;
+	font-size: 42px;
+}
+.content_small-text{
+	font-family: CrimsonTextRoman;
+	font-size: 16px;
+}
+.iphone{
+	padding: 100px 100px 100px 100px;
+	width: 670px;
+	display: inline-block;
+}
+.iphone__h1{
+	margin: 0;
+	padding-bottom: 30px;
+}
+.iphone__description{
+	margin: 0;
+	padding-bottom: 65px;
+}
+.buy{
+	background: #2754eb;
+	text-transform: uppercase;
+	color: white;
+	border: none;
+	border-radius: 25px;
+	font-size: 11px;
+	padding: 0 50px 0 50px;
+	line-height: 40px;
+	cursor: pointer
+}
+.buy:focus{
+	outline: none;
+}
+.iphone__img{
+	position: relative;
+	bottom: 67px;
+}
