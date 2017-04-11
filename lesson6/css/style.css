@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'ArvoRegular';
+    src: url('fonts/ArvoRegular.eot');
+    src: url('fonts/ArvoRegular.eot') format('embedded-opentype'),
+         url('fonts/ArvoRegular.woff2') format('woff2'),
+         url('fonts/ArvoRegular.woff') format('woff'),
+         url('fonts/ArvoRegular.ttf') format('truetype'),
+         url('fonts/ArvoRegular.svg#ArvoRegular') format('svg');
+}
+@font-face {
+	font-family: 'Noto Sans';
+	src: url('NotoSans.eot');
+	src: url('NotoSans.eot?#iefix') format('embedded-opentype'),
+		url('NotoSans.woff') format('woff'),
+		url('NotoSans.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+body{
+	background: #f3f5f7;
+}
+.main-text{
+	font-family: ArvoRegular;
+	font-size: 30px;
+	color: #3b3f6a;
+	height: 200px;
+	padding-top: 30px;
+}
+.info-h{
+	text-align: center;
+	color: #3b3f6a;
+	font-size: 22px;
+}
+.info-p{
+	text-align: center;
+	color: #686c8a;
+	font-size: 20px;
+}
+img{
+	display: block;
+	margin: auto;
+	padding-bottom: 30px;
+}
