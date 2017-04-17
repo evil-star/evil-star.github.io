@@ -1,0 +1,115 @@
+@import "libs"
+@import "reset"
+
+body
+	background-color: #2F3238
+	color: #fff
+	font-family: 'Arial', 'sans-serif'
+*
+	transition: all 0.5s
+.header
+	padding: 50px 0
+	text-align: center
+	h1
+		font-size: 50px
+		font-weight: bold
+	span
+		color: #707376
+		font-size: 25px
+		padding-top: 15px
+
+.block-container
+	display: flex
+	justify-content: space-around
+	flex-wrap: wrap
+.wrap
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 100%
+	text-align: center
+	background-color: rgba(0, 144, 255,.1)
+	&:hover
+		background-color: rgba(0,0,0,0)
+		.view-more-1
+			opacity: 1
+			transform: translateY(0)
+		.block-header-1
+			opacity: 1
+			transform: translateX(0)
+		.block-desc-1
+			opacity: 1
+			transform: translateX(0)
+		.block-header-2
+			transform: translateY(0px)
+		.block-desc-2
+			opacity: 1
+			transform: translateY(0px)
+		.view-more-2
+			transform: translateY(0px)
+			opacity: 1
+
+.block-2:hover
+	background-position-y: 0
+.block
+	width: 480px
+	height: 360px
+	margin-bottom: 70px
+	color: #fff
+	border: 5px solid white
+	overflow: hidden
+	&-1
+		background: url(../img/1.jpg) no-repeat center center
+	&-2
+		background: url(../img/2.jpg) no-repeat center center
+		background-size: 120%
+		background-position-y: -10px
+	&-3
+		background: url(../img/3.jpg) no-repeat center center
+	&-4
+		background: url(../img/4.jpg) no-repeat center center
+	&-header
+		font-size: 30px
+		font-weight: bold
+		display: block
+		line-height: 50px
+	&-desc
+		display: block
+	
+.view-more
+	display: block
+	border: 2px solid white
+	border-radius: 25px
+	line-height: 30px
+	color: white
+	text-transform: uppercase
+	font-size: 12px
+	width: 130px
+	margin: 15px auto 0 auto
+	&:hover
+		color: inherit
+
+.view-more-1
+	opacity: 0
+	transform: translateY(20px)
+.block-header-1
+	transform: translateX(60px)
+	opacity: 0
+.block-desc-1
+	transform: translateX(-60px)
+	opacity: 0
+	transition: all 1s
+.block-header-2
+	transform: translateY(20px)
+.block-desc-2
+	transition: all .5s
+	transform: translateY(60px)
+	opacity: 0
+.view-more-2
+	transform: translateY(70px)
+	opacity: 0
+	transition: all .8s
+
+
+@import "media" // Всегда в конце
+ 
