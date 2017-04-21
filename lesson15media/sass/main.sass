@@ -1,0 +1,144 @@
+@import "libs"
+@import "fonts"
+@import "reset"
+*
+	box-sizing: border-box
+
+// Fonts-mixins
+.f-heavy
+	font-family: 'P22 Underground CY Pro'
+	font-weight: 900;
+.f-book
+	font-family: 'P22 Underground CY Pro'
+	font-weight: bold
+.f-medium
+	font-family: 'P22 Underground CY Pro'
+	font-weight: 500
+.f-thin
+	font-family: 'P22 Underground CY Pro'
+	font-weight: 100
+
+// Color-mixins
+$light: rgb(255, 255, 51)
+$f-white: rgb(255, 255, 255)
+$f-black: rgb(51, 51, 51)
+$f-active: rgb(153, 153, 153)
+
+.header
+	background: url(../img/bg.png) no-repeat center center
+	background-size: cover
+	padding: 50px 0
+	min-height: 750px
+.logo
+	color: $f-white
+	text-align: center
+	&__txt
+		display: inline-block
+		vertical-align: top
+		padding: 0 10px
+		text-align: left
+	h1
+		@extend .f-heavy
+		font-size: 16px
+	span
+		@extend .f-thin
+		font-size: 16px
+.order-call
+	text-align: center
+	&__button
+		padding: 20px 0px
+		border: 1px solid $f-white
+		display: block
+		border-radius: 5px
+		color: $f-white
+		text-align: center
+		@extend .f-thin
+		&:hover
+			color: $f-white
+	&__number
+		@extend .f-heavy
+		color: $f-white
+		line-height: 57.6px
+.discount
+	color: $light
+	@extend .f-heavy
+	font-size: 37px
+	text-align: center
+	padding: 60px 0
+.consult
+	height: 100%
+	.header__advantages-list
+		display: flex
+		align-items: center
+		height: 410px
+		li
+			@extend .f-book
+			font-size: 20px
+			color: $f-white
+			line-height: 40px
+.free-consult
+	padding: 50px
+	background-color: #FFF
+	border-radius: 3px
+	color: $f-black
+	h1
+		@extend .f-book
+		font-size: 22px
+		text-align: center
+	&__icon
+		width: 60px
+		height: 60px
+		display: inline-block
+		background-color: $f-black
+		border-radius: 3px
+		text-align: center
+		line-height: 60px
+	input, input:active
+		border: none
+		outline: none
+		font-size: 15px
+		width: 60%
+		@extend .f-book
+	.input-name, .input-number
+		border: 1px solid #000
+		border-radius: 3px
+	.input-name
+		margin-top: 50px
+	.input-number
+		margin-top: 10px
+	button
+		@extend .f-book
+		background-color: $light
+		font-size: 15px
+		width: 100%
+		line-height: 55px
+		box-shadow: 0 3px 0 #999900
+		margin-top: 10px
+.header-money
+	position: relative
+	left: 50%
+	top: 95px
+	transform: translateX(-50%)
+
+.section-advantages
+	text-align: center
+	.advantage
+		margin-top: 100px
+	span
+		@extend .f-book
+		font-size: 18px
+		display: block
+		margin-top: 30px
+	&__img
+		background-color: $light
+		border-radius: 50px
+		width: 80px
+		height: 80px
+		margin: 0 auto
+		text-align: center
+		img
+			position: relative
+			top: 50%
+			transform: translateY(-50%)
+@import "media" // Всегда в конце
+ 
