@@ -1,0 +1,87 @@
+@import "libs"
+@import "reset"
+*
+	box-sizing: border-box
+.main
+	height: 100%
+	width: 100%
+	background: url(../img/bg.png) center center no-repeat
+	background-size: cover
+	overflow: hidden
+	position: relative
+.log-in
+	font-family: 'Ubuntu', sans-serif
+	text-align: right
+	color: #fff
+	padding: 25px 25px 0 0
+	span
+		padding: 0 20px
+	a
+		color: #fff
+		background: rgba(255,255,255,.3)
+		display: inline-block
+		padding: 10px
+		border: 1px solid rgba(255,255,255,.4)
+		border-radius: 5px
+.reg
+	background: url(../img/serf.png) center center no-repeat
+	width: 335px
+	height: 850px
+	margin: 0 auto
+	position: relative
+	font-family: 'Ubuntu'
+	font-weight: bold
+	.reg-form
+		position: absolute
+		top: 42%
+		left: 38px
+		width: 250px
+		margin: 0 auto
+	.reg-input
+		display: block
+		width: 100%
+		height: 37px
+		background: rgba(0,0,0,.4)
+		margin-bottom: 10px
+		box-shadow: inset 0 1px 3px #000
+		color: #fff
+		border: 0px
+		font-size: 12px
+		padding: 0 50px 0 20px
+		&:focus
+			outline: none
+	.block
+		position: relative
+		img
+			position: absolute
+			right: 6px
+			top: 2px
+	.email-block
+		img
+			top: 5px
+	.submit-input
+		background: url(../img/reg-bg.png)
+		box-shadow: 1px 1px 5px #000
+		text-transform: uppercase
+.footer
+	font-family: 'Ubuntu'
+	font-weight: bold
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	line-height: 45px
+	padding: 0 20px
+	background-color: rgba(0,0,0,.2)
+	.copyright
+		float: right
+input.error
+	border: 1px solid red !important
+label
+	font-family: 'Ubuntu'
+	font-weight: 400
+	color: #fff !important
+
+
+@import "media" // Всегда в конце
+ 
