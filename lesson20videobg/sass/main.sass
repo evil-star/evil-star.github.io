@@ -1,0 +1,93 @@
+@import "libs"
+@import "normalize.css"
+
+html
+	font-size: 16px
+*
+	background-origin: border-box
+
+// Fonts mixins
+.f-light
+	font-family: 'Ubuntu', sans-serif
+	font-weight: 300
+.f-regular
+	font-family: 'Ubuntu', sans-serif
+	font-weight: 400
+.f-bold
+	font-family: 'Ubuntu', sans-serif
+	font-weight: 700
+
+// Color mixins
+$c-white: white
+$c-green: rgb(26, 188, 156)
+
+body
+	margin: 0
+header
+	height: 100vh
+	color: $c-white
+	@extend .f-regular
+	.header__content-desc
+		font-size: 0.875rem
+		text-align: center
+		display: block
+		margin-top: 10%
+		@extend .f-bold
+	h1
+		font-size: 3.5rem
+		text-align: center
+		margin: 0
+	p
+		text-align: center
+		margin-top: 3%
+	img
+		text-align: center
+		display: block
+		margin: 0 auto
+		cursor: pointer
+		margin-top: 7%
+	.subscribe-form
+		width: 50%
+		margin: 0 auto
+		margin-top: 89px
+		input
+			height: 50px
+			border: none
+			text-indent: 0
+			padding-left: 5%
+		.subscribe-input
+			border: 1px solid #cecece
+		.subscribe-btn
+			background-color: $c-green
+			padding-right: 5%
+	.note_green
+		color: $c-green
+		font-size: 1rem
+		@extend .f-light
+	.note
+		display: block
+		text-align: center
+		margin-top: 4%
+
+.nav
+	.logo
+		padding: 10px 0
+		display: inline-block
+		margin-right: 20px
+	ul
+		display: inline-block
+		li
+			display: inline-block
+			padding: 10px
+			text-transform: uppercase
+			color: #a69999
+	.social
+		display: inline-block
+		float: right
+		border-left: 1px solid #cecece
+		border-right: 1px solid #cecece
+		img
+			padding: 10px 10px
+
+@import "media" // Всегда в конце
+ 
