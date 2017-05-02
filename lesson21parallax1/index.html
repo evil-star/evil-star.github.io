@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>parallax-1</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,500,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<section>
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="logo"><a href="#"><img src="img/logo.png" alt="logo"></a></div>
+					</div>
+					<div class="col-md-5 col-md-offset-4">
+						<ul class="nav">
+							<li><a href="#">how it works</a></li>
+							<li><a href="#">about us</a></li>
+							<li><a href="#">contact us</a></li>
+							<li><a href="#">blog</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-main">
+				<div class="container">
+					<div id="scene" class="parallax">
+						<div class="layer" data-depth="0.10">
+							<div class="shape-1">
+								<img src="img/shape-1.png" alt="">
+							</div>
+						</div>
+						<div class="layer" data-depth="0.20">
+							<div class="shape-2">
+								<img src="img/shape-2.png" alt="">
+							</div>
+						</div>
+						<div class="layer" data-depth="0.40">
+							<div class="shape-3">
+								<img src="img/shape-3.png" alt="">
+							</div>
+						</div>
+						<div class="layer" data-depth="0.60">
+							<div class="shape-4">
+								<img src="img/shape-4.png" alt="">
+							</div>
+						</div>
+						
+						<div class="header-main-content">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="header-main__left-block">
+										<h1>track your next<br> fuel shops</h1>
+										<span class="slogan">Monitor and Alert on all petrol bunks near to you </span>
+										<span class="signup">Sign up For <span class="free">FREE</span></span>
+										<form action="">
+											<input type="text" class="email-input" placeholder="Your E-mail Adress"><input type="submit" class="submit-btn" value="SIGNUP">
+										</form>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="phone-img">
+										<img src="img/phone.png" alt="Phone">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="libs/parallax/jquery.parallax.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('#scene').parallax();
+		});
+	</script>
+
+</body>
+</html>
