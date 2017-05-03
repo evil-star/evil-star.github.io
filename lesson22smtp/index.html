@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+
+	<div class="main">
+		<div class="log-in">
+			<span>Уже есть аккаунт?</span><a href="#">Войти »</a>
+		</div>
+		<div class="reg">
+			<form action="smart.php" method="POST" class="reg-form" id="form">
+				<div class="name-block block">
+					<input name="name" id="name-input" type="text" class="reg-input name-input" placeholder="Имя пользователя" ><img src="../img/user-icon.svg" alt="">
+				</div>
+				<div class="block email-block">
+					<input name="email" class="reg-input email-input" placeholder="Email"><img src="../img/letter-icon.svg" alt="">
+				</div>
+				<div class="pass-block block">
+					<input name="pass" type="password" class="reg-input pass-input" placeholder="Пароль"><img src="../img/ket-icon.svg" alt="">
+				</div>
+				<button type="submit" class="reg-input submit-input" >Регистрация »</button>
+			</form>
+		</div>
+		<div class="footer">
+			<span class="contact-us">Блог | Связаться с нами</span>
+			<span class="copyright">&copy; 2012-MYSITE</span>
+		</div>
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+
+	<script>
+		$('#form').validate({
+			rules: {
+				name: {
+					required: true,
+					minlength: 2
+				},
+				email: {
+					required: true,
+					minlength: 2,
+					email: true
+				}
+				,
+				pass: {
+					required: true,
+					minlength: 5
+				}
+			},
+			messages: {
+				name: {
+					required: '',
+					minlength: 'Имя должно содержать как минимум 2 символа'
+				},
+				email: {
+					required: '',
+					minlength: 'Email должен содержать как минимум 2 символа',
+					email: 'Введите корректный email'
+				},
+				pass: {
+					required: '',
+					minlength: 'Пароль должен содержать как минимум 5 символов'
+				}
+			}
+		});
+	</script>
+
+	
+</body>
+</html>
