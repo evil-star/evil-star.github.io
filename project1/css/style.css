@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  word-break: break-all;
+  background: #FFF9C5;
+}
+
+.main {
+  background: url(../img/bg.jpg) center no-repeat;
+  background-size: cover;
+  width: 1000px;
+  height: 799px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-info {
+  border: 4px solid #00BDD7;
+  background: #404040;
+  padding: 10px 20px;
+  width: 264px;
+  height: 251px;
+  position: absolute;
+  top: 201px;
+  left: 720px;
+  font-family: "Bad Script";
+  color: #fff;
+}
+
+.notebook {
+  position: absolute;
+  width: 700px;
+  height: 454px;
+  top: 240px;
+  left: 0;
+  background: url(../img/note.png) no-repeat center center;
+  font-family: "Bad Script";
+  line-height: 21px;
+  font-size: 16px;
+  transform: translate(-100%);
+  transition: transform 1s ease-in-out;
+  z-index: 20;
+}
+.notebook div{
+  height: 21px;
+}
+.choose-items{
+  margin-top: 27px;
+}
+.notebook .value{
+  margin-bottom: 28px;
+}
+.paper{
+  top: 29px;
+  height: 403px;
+  width: 220px;
+}
+.notebook .first-paper{
+  position: absolute;
+  left: 88px;
+}
+.notebook .second-paper{
+  position: absolute;
+  left: 446px;
+}
+.notebook-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+}
+.notebook input{
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  font-family: "Bad Script";
+  font-weight: bold;
+  height: 23px;
+}
+.notebook button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  background: #cecece;
+}
+input:focus{
+  outline: none;
+}
+.activator{
+  position: absolute;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  right: -99px;
+  top: 191px;
+  background: #9ED67F;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 20px;
+  height: 41px !important;
+  transform: rotate(90deg);
+  font-weight: bold;
+  cursor: pointer;
+}
+.notebook.active{
+  transform: translate(0);
+}
+.open{
+  position: absolute;
+  top: 0;
+  right: 170px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: transform .7s ease-in-out;
+  z-index: 20;
+}
+.open.active{
+  transform: translateY(-50%) rotate(180deg);
+}
+.closed{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+.closed.active{
+  opacity: .5;
+}
+.seller{
+  position: absolute;
+  left: 640px;
+  top: 230px;
+  z-index: 20;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+.seller.active{
+  opacity: 1;
+  left: 680px;
+}
+.openit{
+  transform: rotate(-90deg);
+  position: absolute;
+  width: 100px;
+  height: auto;
+  right: 200px;
+  top: 220px;
+  z-index: 20;
+  animation: up-down .8s infinite;
+  transition: opacity .5s ease-in-out;
+}
+.openit.active{
+  opacity: 0;
+}
+@keyframes up-down{
+  0%{
+    top: 220px;
+  }
+  50%{
+    top: 240px;
+  }
+  100%{
+    top: 220px;
+  }
+}
+.name-value, .discount-value{
+  text-align: center;
+}
+.hire-employers{
+  margin-top: 23px;
+}
