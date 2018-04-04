@@ -20,7 +20,7 @@ var mainList = {
   employers: {},
   isOpen: false,
   price: "",
-  discount: true,
+  discount: false,
   shopGoods: [],
   shopItems: [],
   addShopItems: function addShopItems() {
@@ -90,6 +90,8 @@ notebookBtn.onclick = function() {
 
 // Переключатель открыто/закрыто
 openImg.onclick = function() {
+  mainList.discount = false;
+  console.log(mainList.discount);
   if (mainList.isOpen) mainList.isOpen = false; else mainList.isOpen = true;
   openImg.classList.toggle("active");
   closedOverlay.classList.toggle("active");
@@ -98,11 +100,14 @@ openImg.onclick = function() {
   if (mainList.isOpen) {
     mainList.budget = +prompt("Введите бюджет вашего кафе", 15000);
     let shopName = prompt("Название вашего кафе", "ЯваСкрипт");
-    let discount = confirm("Будет ли сегодня скидка для посетителей?");
+    mainList.discount = confirm("Будет ли сегодня скидка для посетителей?");
     budgetField.textContent = mainList.budget;
     nameField.textContent = shopName;
-    if (discount) {
+    if (mainList.discount) {
       discountField.textContent = "-20% на всё меню";
+    }
+    else{
+      discountField.textContent = "Сегодня нет скидок :(";
     }
   }
 };
