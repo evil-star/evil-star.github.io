@@ -38,7 +38,7 @@ let sexMaleRadio = document.querySelector("#male"),
 
 sexMaleRadio.addEventListener("change", function() {
   sex = "male";
-  personSkin.style.backgroundImage = "url(../img/skin/skin-1.png)";
+  personSkin.style.backgroundImage = "url(img/skin/skin-1.png)";
   clothesCurrent = 0;
   hairCurrent = 0;
   skinCurrent = 0;
@@ -48,7 +48,7 @@ sexMaleRadio.addEventListener("change", function() {
 });
 sexFemaleRadio.addEventListener("change", function() {
   sex = "female";
-  personSkin.style.backgroundImage = "url(../img/skin/skin-4.png)";
+  personSkin.style.backgroundImage = "url(img/skin/skin-4.png)";
   clothesCurrent = 3;
   hairCurrent = 3;
   skinCurrent = 0;
@@ -79,7 +79,7 @@ function clothesChange() {
   }
 
   clothesSlide[clothesCurrent].style.display = "block";
-  personClothes.style.backgroundImage = `url(../img/clothes/construct/clothes-${clothesCurrent+1}.png`;
+  personClothes.style.backgroundImage = `url(img/clothes/construct/clothes-${clothesCurrent+1}.png`;
 }
 
 // Смена волос
@@ -104,7 +104,7 @@ function hairChange() {
   }
 
   hairSlide[hairCurrent].style.display = "block";
-  personHair.style.backgroundImage = `url(../img/hair/construct/hair-${hairCurrent+1}.png`;
+  personHair.style.backgroundImage = `url(img/hair/construct/hair-${hairCurrent+1}.png`;
 }
 
 // Смена кожи
@@ -121,7 +121,7 @@ function skinChange() {
   }
 
   skinSlide[skinCurrent].style.display = "block";
-  personSkin.style.backgroundImage = `url(../img/skin/skin-${sex == "male" ? skinCurrent+1 : skinCurrent+4}.png`;
+  personSkin.style.backgroundImage = `url(img/skin/skin-${sex == "male" ? skinCurrent+1 : skinCurrent+4}.png`;
 }
 
 // Слайдеры
