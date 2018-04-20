@@ -13,6 +13,7 @@ createBtn.addEventListener("click", function() {
   }, 1000);
 
   customPage.style.display = "flex";
+  customPage.className += " animated fadeIn";
   for (var i = 0; i < customPage.children.length; i++) {
     customPage.children[i].style.display = "block";
   }
@@ -158,3 +159,45 @@ skinPrev.addEventListener("click", function() {
 skinNext.addEventListener("click", function() {
   skinChange(skinCurrent += 1);
 });
+
+// Кнопка "готово"
+
+let readyBtn = document.querySelector("#ready"),
+person = {},
+cardsBlock = document.querySelector(".main-cards"),
+newPerson = document.querySelector(".main-cards-item").cloneNode(true);
+
+readyBtn.addEventListener("click", function() {
+  person.name = document.querySelector("#name").value;
+  person.age = document.querySelector("#age").value;
+  person.sex = document.querySelector("[name=sex]:checked").value;
+  person.views = document.querySelector("#select").value;
+  person.bio = document.querySelector("#bio").value;
+
+  // Переносим значения полей в новую карточку
+  newPerson.querySelector(".name").textContent = person.name;
+  newPerson.querySelector(".age").textContent = person.age;
+  newPerson.querySelector(".sex").textContent = person.sex;
+  newPerson.querySelector(".views").textContent = person.views;
+  newPerson.querySelector(".bio").textContent = person.bio;
+  newPerson.querySelector(".photo").innerHTML = document.querySelector(".person.construct").innerHTML;
+  newPerson.querySelector(".photo").classList.remove("photo-1");
+
+  cardsBlock.appendChild(newPerson);
+
+  mainPage.classList.remove("fadeOutDown");
+  mainPage.classList.add("fadeIn");
+
+  customPage.classList.remove("fadeIn");
+  customPage.className += " animated fadeOutDown";
+
+  // Обнуляем голоса
+  let progressBar = mainPage.querySelectorAll(".progress-bar"),
+  progressBarNumber = mainPage.querySelectorAll(".result-count");
+  for (var i = 0; i < progressBar.length; i++) {
+    progressBar[i].style.height = "0%";
+    progressBarNumber[i].textContent = "0%";
+  }
+});
+
+

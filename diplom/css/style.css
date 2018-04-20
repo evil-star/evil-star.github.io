@@ -3509,6 +3509,7 @@ body {
 }
 
 .main-cards-item .candidate-block .person-skin {
+  background: url("../img/skin/skin-1.png") center no-repeat;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
@@ -3518,6 +3519,7 @@ body {
 }
 
 .main-cards-item .candidate-block .person-clothes {
+  background: url("../img/clothes/construct/clothes-1.png") center no-repeat;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
@@ -3527,6 +3529,7 @@ body {
 }
 
 .main-cards-item .candidate-block .person-hair {
+  background: url("../img/hair/construct/hair-1.png") center no-repeat;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
@@ -3549,6 +3552,7 @@ body {
   width: 90px;
   height: 195px;
   margin-right: 30px;
+  position: relative;
   background-size: cover;
 }
 
