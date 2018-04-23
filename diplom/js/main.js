@@ -66,15 +66,15 @@ function clothesChange() {
 
   if (sex == "male") {
     if (clothesCurrent < 0) {
-      clothesCurrent = 0;
-    } else if (clothesCurrent > 2) {
       clothesCurrent = 2;
+    } else if (clothesCurrent > 2) {
+      clothesCurrent = 0;
     }
   } else if (sex == "female") {
     if (clothesCurrent < 3) {
-      clothesCurrent = 3;
-    } else if (clothesCurrent > 5) {
       clothesCurrent = 5;
+    } else if (clothesCurrent > 5) {
+      clothesCurrent = 3;
     }
   }
 
@@ -91,15 +91,15 @@ function hairChange() {
 
   if (sex == "male") {
     if (hairCurrent < 0) {
-      hairCurrent = 0;
-    } else if (hairCurrent > 2) {
       hairCurrent = 2;
+    } else if (hairCurrent > 2) {
+      hairCurrent = 0;
     }
   } else if (sex == "female") {
     if (hairCurrent < 3) {
-      hairCurrent = 3;
-    } else if (hairCurrent > 5) {
       hairCurrent = 5;
+    } else if (hairCurrent > 5) {
+      hairCurrent = 3;
     }
   }
 
@@ -115,9 +115,9 @@ function skinChange() {
   }
 
   if (skinCurrent > 2) {
-    skinCurrent = 2;
+    skinCurrent = 0;
   } else if (skinCurrent < 0) {
-  	skinCurrent = 0;
+  	skinCurrent = 2;
   }
 
   skinSlide[skinCurrent].style.display = "block";
@@ -168,11 +168,41 @@ cardsBlock = document.querySelector(".main-cards"),
 newPerson = document.querySelector(".main-cards-item").cloneNode(true);
 
 readyBtn.addEventListener("click", function() {
-  person.name = document.querySelector("#name").value;
-  person.age = document.querySelector("#age").value;
-  person.sex = document.querySelector("[name=sex]:checked").value;
-  person.views = document.querySelector("#select").value;
-  person.bio = document.querySelector("#bio").value;
+  let name = document.querySelector("#name").value,
+  age = document.querySelector("#age").value,
+  sex = document.querySelector("[name=sex]:checked").value,
+  views = document.querySelector("#select").value,
+  bio = document.querySelector("#bio").value,
+  valid = true;
+
+  // Валидация полей
+  if(name !== '' && isNaN(+name)){
+    document.querySelector("#name").style.border = "none";
+  } else {
+    document.querySelector("#name").style.border = "1px solid red";
+    valid = false;
+  }
+  if(age !== '' && !isNaN(+age)){
+    document.querySelector("#age").style.border = "none";
+  } else {
+    document.querySelector("#age").style.border = "1px solid red";
+    valid = false;
+  }
+  if(bio !== '' && isNaN(+bio)){
+    document.querySelector("#bio").style.border = "none";
+  } else {
+    document.querySelector("#bio").style.border = "1px solid red";
+    valid = false;
+  }
+  if(!valid) {
+    return;
+  }
+
+  person.name = name;
+  person.age = age;
+  person.sex = sex;
+  person.views = views;
+  person.bio = bio;
 
   // Переносим значения полей в новую карточку
   newPerson.querySelector(".name").textContent = person.name;
