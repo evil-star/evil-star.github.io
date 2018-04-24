@@ -6,7 +6,7 @@ let createBtn = document.querySelector(".popup-btn"),
 
 createBtn.addEventListener("click", function() {
   popupOverlay.className += " animated fadeOut";
-  mainPage.className += " animated fadeOutDown";
+  mainPage.className += " animated fadeOutRight";
 
   setTimeout(function() {
     popupOverlay.style.display = "none";
@@ -215,11 +215,11 @@ readyBtn.addEventListener("click", function() {
 
   cardsBlock.appendChild(newPerson);
 
-  mainPage.classList.remove("fadeOutDown");
+  mainPage.classList.remove("fadeOutRight");
   mainPage.classList.add("fadeIn");
 
   customPage.classList.remove("fadeIn");
-  customPage.className += " fadeOutDown";
+  customPage.className += " fadeOutRight";
 
   // Обнуляем голоса
 
@@ -275,9 +275,9 @@ let resetBtn = document.querySelector("#reset");
 
 resetBtn.addEventListener("click", function() {
   mainPage.classList.remove("fadeIn");
-  mainPage.classList.add("fadeOutDown");
+  mainPage.classList.add("fadeOutRight");
 
-  customPage.classList.remove("fadeOutDown");
+  customPage.classList.remove("fadeOutRight");
   customPage.className += " fadeIn";
 
   let inputs = document.querySelectorAll("input, textarea");
