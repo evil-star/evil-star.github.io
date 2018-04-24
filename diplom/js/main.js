@@ -219,9 +219,10 @@ readyBtn.addEventListener("click", function() {
   mainPage.classList.add("fadeIn");
 
   customPage.classList.remove("fadeIn");
-  customPage.className += " animated fadeOutDown";
+  customPage.className += " fadeOutDown";
 
   // Обнуляем голоса
+
   let progressBar = mainPage.querySelectorAll(".progress-bar"),
   progressBarNumber = mainPage.querySelectorAll(".result-count");
   for (var i = 0; i < progressBar.length; i++) {
@@ -230,4 +231,93 @@ readyBtn.addEventListener("click", function() {
   }
 });
 
+// Провести честное голосование
 
+let votes = [],
+trueVoteBtn = document.querySelector("#voting");
+
+trueVoteBtn.addEventListener("click", function() {
+  votes = [];
+  votes[0] = getRndInteger(0, 100);
+
+  if(votes[0] < 100) {
+    votes[1] = getRndInteger(0, 100 - votes[0]);
+    if(votes[0] + votes[1] < 100){
+      votes[2] = 100 - votes[0] - votes[1];
+    } else {
+      votes[2] = 0;
+    }
+  } else {
+    votes[1] = 0;
+    votes[2] = 0;
+  }
+
+  let progressBar = mainPage.querySelectorAll(".progress-bar"),
+  progressBarNumber = mainPage.querySelectorAll(".result-count");
+  for (var i = 0; i < progressBar.length; i++) {
+    progressBar[i].style.height = votes[i] + "%";
+    progressBarNumber[i].textContent = votes[i] + "%";
+  }
+});
+
+// Получение рандомного числа
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+// Сброс результатов
+
+let resetBtn = document.querySelector("#reset");
+
+resetBtn.addEventListener("click", function() {
+  mainPage.classList.remove("fadeIn");
+  mainPage.classList.add("fadeOutDown");
+
+  customPage.classList.remove("fadeOutDown");
+  customPage.className += " fadeIn";
+
+  let inputs = document.querySelectorAll("input, textarea");
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].value = "";
+  }
+
+  clothesCurrent = 3;
+  hairCurrent = 3;
+  skinCurrent = 0;
+  clothesChange();
+  hairChange();
+  skinChange();
+});
+
+// Вмешаться в выборы
+
+let crime = document.querySelector("#crime");
+
+crime.addEventListener("click", function() {
+  let progressBar = mainPage.querySelectorAll(".progress-bar"),
+  progressBarNumber = mainPage.querySelectorAll(".result-count"),
+  popularIndex = mostPopular(votes);
+
+  if(votes[popularIndex] >= 25 && votes[2] <= 75){
+    votes[popularIndex] -= 25;
+    votes[2] += 25;
+  }
+
+  for (var i = 0; i < progressBar.length; i++) {
+    progressBar[i].style.height = votes[i] + "%";
+    progressBarNumber[i].textContent = votes[i] + "%";
+  }
+});
+
+let mostPopularIndex = 0;
+function mostPopular(arr){
+  let mostPopularValue = 0;
+  for (var i = 0; i < votes.length - 1; i++) {
+    if (votes[i] > mostPopularValue) { 
+      mostPopularValue = votes[i];
+      mostPopularIndex = i;
+    }
+  }
+  return mostPopularIndex;
+}
