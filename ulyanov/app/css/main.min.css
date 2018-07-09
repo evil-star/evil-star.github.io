@@ -10313,6 +10313,10 @@ section .subtitle-black {
   background: linear-gradient(to left, #1CB5E0, #000046);
 }
 
+ul.ul-tick li span:first-child {
+  margin-right: 10px;
+}
+
 nav {
   height: 94px;
   line-height: 94px;
@@ -10898,10 +10902,6 @@ h1 {
 
 .new-content .btn:visited {
   background: #3573d8;
-}
-
-ul.ul-tick li span:first-child {
-  margin-right: 10px;
 }
 
 .contacts-content {
