@@ -5,10 +5,16 @@ h1, h2 {
 #content {
     margin-top: 40px;
 }
-.remove-tweet,
-.remove-tweet:hover {
+.remove-tweet {
     float: right;
     cursor: pointer;
     color: red;
     font-weight: bold;
+}
+.remove-tweet:hover{
+	color: #A20000;
+}
+
+textarea{
+	resize: none;
 }

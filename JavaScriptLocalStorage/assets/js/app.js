@@ -1,5 +1,6 @@
 // Variables
 var tweetList = document.querySelector('#tweet-list');
+var textInput = document.querySelector('textarea');
 
 // Event Listeners
 
@@ -26,6 +27,8 @@ function newTweet(e) {
   tweetList.appendChild(li);
 
   addTweetLocalStorage(tweetText);
+
+  textInput.value = '';
 }
 
 function removeTweet(e) {
