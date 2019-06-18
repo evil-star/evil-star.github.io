@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+  <title>Java Script</title>
+</head>
+
+<body>
+  <img src="img/arrow.png" alt="" class="openit">
+  <div class="closed active"></div>
+  <img src="img/seller.png" alt="" class="seller">
+  <div class="open">
+    <img src="img/opeClose.png" alt="" class="open-btn" id="open-btn">
+  </div>
+  <div class="main">
+    <div class="main-info">
+      <div class="name">Кафе: </div>
+      <div class="name-value"></div>
+      <div class="items">Меню: </div>
+      <div class="items-value"></div>
+      <div class="discount">Скидки: </div>
+      <div class="discount-value"></div>
+      <!-- <div class="isopen">Открыто </div> -->
+      <!-- <div class="isopen-value"></div> -->
+    </div>
+    <div class="main-functions">
+      <!-- <div class="time">Сколько сейчас времени?</div>
+      <input class="time-value" type="text" id="time"> -->
+    </div>
+  </div>
+  <div class="notebook">
+    <div class="first-paper paper">
+      <div class="notebook-title">Информация</div>
+      <div class="budget">Бюджет магазина: </div>
+      <div class="budget-value value"></div>
+      <div class="employers">Текущие отрудники: </div>
+      <div class="employers-value value"></div>
+      <div class="goods">Текущие категории товаров: </div>
+      <div class="goods-value value"></div>
+      <div class="count-budget">Расчет дневного бюджета</div><input class="count-budget-value" type="text" id="budget" placeholder="___">
+        <button class="count-budget-btn" placeholder="__">Рассчитать</button>
+    </div>
+    <div class="main-functions">
+      <div class="second-paper paper">
+        <div class="notebook-title">Правки</div>
+        <div class="choose-goods">Напишите категории товаров</div><input class="goods-item" type="text" id="goods_1" placeholder="___"><input class="goods-item" type="text" id="goods_2" placeholder="___"><input class="goods-item" type="text" id="goods_3" placeholder="___"><input class="goods-item" type="text" id="goods_4" placeholder="___">
+        <button class="goods-item-btn">Утвердить</button>
+        <div class="choose-items">Список товаров через запятую</div><input class="choose-item" type="text" id="items" placeholder="___">
+        <div class="hire-employers">Имена новых сотрудников</div>
+        <input class="hire-employers-item" type="text" id="employers_1" placeholder="___">
+        <input class="hire-employers-item" type="text" id="employers_2" placeholder="___">
+        <input class="hire-employers-item" type="text" id="employers_3" placeholder="___">
+        <button class="hire-employers-btn">Нанять</button>
+      </div>
+    </div>
+    <div class="activator">Внести правки</div>
+  </div>
+
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <script src="js/script.js?v=2">
+  </script>
+</body>
+
+</html>
