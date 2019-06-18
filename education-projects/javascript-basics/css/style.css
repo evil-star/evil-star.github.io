@@ -6,6 +6,7 @@ body {
   word-break: break-all;
   background: #fff9c5;
   min-width: 1880px;
+  position: relative;
 }
 
 .main {
