@@ -1,0 +1,164 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "mixins"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: "Montserrat", sans-serif
+	overflow-x: hidden
+	color: $text
+	*
+		box-sizing: border-box
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+p
+	margin: 0
+
+.container
+	max-width: 1400px
+	padding: 0 7px
+	margin: 0 auto
+
+nav
+	padding: 10px 0
+	.container
+		display: flex
+		justify-content: flex-end
+
+header
+	height: 88vh
+
+h1
+	max-width: 500px
+	font-weight: 500
+	line-height: 1.1em
+	font-size: 3.1em
+	margin: 12vw 0 0 0
+	position: fixed
+	> span
+		display: block
+		font-style: italic
+		font-size: .37em
+		margin-top: 1.1em
+.social-links
+	a
+		display: inline-block
+		padding: 5px
+	img
+		width: 30px
+		height: auto
+		display: block
+
+main
+	display: flex
+	flex-wrap: wrap
+	padding: 0 0 20px 0
+
+.portfolio
+	&-item
+		position: relative
+		display: block
+		width: 20%
+		padding: 15px
+		img
+			display: block
+			max-width: 100%
+			box-shadow: 7px 9px 12px 0 rgba(0,0,0,0.2)
+			width: 100%
+		&-inner
+			position: relative
+			background-image: url("data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7")
+		&-overlay
+			padding: 20px
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			font-size: 15px
+			*
+				z-index: 10
+			&:after
+				content: ''
+				display: block
+				opacity: 0
+				transition: opacity .2s
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background: rgba(255,255,255,.85)
+			.btn
+				opacity: 0
+				position: absolute
+				left: 20px
+				bottom: 20px
+				font-size: 1em
+				padding: .6em 1.4em
+			p
+				font-size: 1.3em
+				line-height: 1.3em
+				position: relative
+				top: -20px
+				opacity: 0
+				transition: opacity .2s, top .2s
+			&:hover
+				&:after
+					opacity: 1
+				& p, & .btn, &
+					opacity: 1
+					z-index: 10
+				p
+						top: 0
+.btn
+	border: 2px solid #000000
+	text-align: center
+	color: #000000
+	text-decoration: none
+	text-transform: uppercase
+	font-weight: bold
+	display: inline-block
+	transition: color .2s, background .2s, opacity .2s
+	&:hover
+		background: #000000
+		color: #ffffff
+		cursor: pointer
+
+footer
+	padding: 10px 0
+	.container
+		display: flex
+		justify-content: center
+
+@import "media" // Always at the end

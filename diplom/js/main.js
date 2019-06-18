@@ -20,22 +20,17 @@ createBtn.addEventListener("click", function() {
 });
 
 // Кастомизация
-
 let sexMaleRadio = document.querySelector("#male"),
   sexFemaleRadio = document.querySelector("#female"),
-
   clothesSlide = document.querySelectorAll(".clothes-style"),
   hairSlide = document.querySelectorAll(".hair-style"),
   skinSlide = document.querySelectorAll(".skin-color"),
-
   personClothes = document.querySelector("#person-clothes"),
   personHair = document.querySelector("#person-hair"),
   personSkin = document.querySelector("#person-skin"),
-
   sex = "male";
 
 // Смена пола
-
 sexMaleRadio.addEventListener("change", function() {
   sex = "male";
   personSkin.style.backgroundImage = "url(img/skin/skin-1.png)";
@@ -58,7 +53,6 @@ sexFemaleRadio.addEventListener("change", function() {
 });
 
 // Смена одежды
-
 function clothesChange() {
   for (var i = 0; i < clothesSlide.length; i++) {
     clothesSlide[i].style.display = "none";
@@ -79,11 +73,11 @@ function clothesChange() {
   }
 
   clothesSlide[clothesCurrent].style.display = "block";
-  personClothes.style.backgroundImage = `url(img/clothes/construct/clothes-${clothesCurrent+1}.png`;
+  personClothes.style.backgroundImage = `url(img/clothes/construct/clothes-${clothesCurrent +
+    1}.png`;
 }
 
 // Смена волос
-
 function hairChange() {
   for (var i = 0; i < hairSlide.length; i++) {
     hairSlide[i].style.display = "none";
@@ -104,11 +98,11 @@ function hairChange() {
   }
 
   hairSlide[hairCurrent].style.display = "block";
-  personHair.style.backgroundImage = `url(img/hair/construct/hair-${hairCurrent+1}.png`;
+  personHair.style.backgroundImage = `url(img/hair/construct/hair-${hairCurrent +
+    1}.png`;
 }
 
 // Смена кожи
-
 function skinChange() {
   for (var i = 0; i < skinSlide.length; i++) {
     skinSlide[i].style.display = "none";
@@ -121,47 +115,44 @@ function skinChange() {
   }
 
   skinSlide[skinCurrent].style.display = "block";
-  personSkin.style.backgroundImage = `url(img/skin/skin-${sex == "male" ? skinCurrent+1 : skinCurrent+4}.png`;
+  personSkin.style.backgroundImage = `url(img/skin/skin-${
+    sex == "male" ? skinCurrent + 1 : skinCurrent + 4
+  }.png`;
 }
 
 // Слайдеры
-
 let clothesPrev = document.querySelector(".clothes .prev"),
   clothesNext = document.querySelector(".clothes .next"),
-
   hairPrev = document.querySelector(".hair .prev"),
   hairNext = document.querySelector(".hair .next"),
-
   skinPrev = document.querySelector(".skin .prev"),
   skinNext = document.querySelector(".skin .next"),
-
   clothesCurrent = 0,
   hairCurrent = 0,
   skinCurrent = 0;
 
 clothesPrev.addEventListener("click", function() {
-  clothesChange(clothesCurrent -= 1);
+  clothesChange((clothesCurrent -= 1));
 });
 clothesNext.addEventListener("click", function() {
-  clothesChange(clothesCurrent += 1);
+  clothesChange((clothesCurrent += 1));
 });
 
 hairPrev.addEventListener("click", function() {
-  hairChange(hairCurrent -= 1);
+  hairChange((hairCurrent -= 1));
 });
 hairNext.addEventListener("click", function() {
-  hairChange(hairCurrent += 1);
+  hairChange((hairCurrent += 1));
 });
 
 skinPrev.addEventListener("click", function() {
-  skinChange(skinCurrent -= 1);
+  skinChange((skinCurrent -= 1));
 });
 skinNext.addEventListener("click", function() {
-  skinChange(skinCurrent += 1);
+  skinChange((skinCurrent += 1));
 });
 
 // Кнопка "готово"
-
 let readyBtn = document.querySelector("#ready"),
   person = {},
   cardsBlock = document.querySelector(".main-cards"),
@@ -176,19 +167,19 @@ readyBtn.addEventListener("click", function() {
     valid = true;
 
   // Валидация полей
-  if (name !== '' && isNaN(+name)) {
+  if (name !== "" && isNaN(+name)) {
     document.querySelector("#name").style.border = "none";
   } else {
     document.querySelector("#name").style.border = "1px solid red";
     valid = false;
   }
-  if (age !== '' && !isNaN(+age) && +age >= 30 && +age <= 100) {
+  if (age !== "" && !isNaN(+age) && +age >= 30 && +age <= 100) {
     document.querySelector("#age").style.border = "none";
   } else {
     document.querySelector("#age").style.border = "1px solid red";
     valid = false;
   }
-  if (bio !== '' && isNaN(+bio) && bio.length >= 20) {
+  if (bio !== "" && isNaN(+bio) && bio.length >= 20) {
     document.querySelector("#bio").style.border = "none";
   } else {
     document.querySelector("#bio").style.border = "1px solid red";
@@ -210,7 +201,9 @@ readyBtn.addEventListener("click", function() {
   newPerson.querySelector(".sex").textContent = person.sex;
   newPerson.querySelector(".views").textContent = person.views;
   newPerson.querySelector(".bio").textContent = person.bio;
-  newPerson.querySelector(".photo").innerHTML = document.querySelector(".person.construct").innerHTML;
+  newPerson.querySelector(".photo").innerHTML = document.querySelector(
+    ".person.construct"
+  ).innerHTML;
   newPerson.querySelector(".photo").classList.remove("photo-1");
 
   cardsBlock.appendChild(newPerson);
@@ -222,7 +215,6 @@ readyBtn.addEventListener("click", function() {
   customPage.className += " fadeOutRight";
 
   // Обнуляем голоса
-
   let progressBar = mainPage.querySelectorAll(".progress-bar"),
     progressBarNumber = mainPage.querySelectorAll(".result-count");
   for (var i = 0; i < progressBar.length; i++) {
@@ -232,7 +224,6 @@ readyBtn.addEventListener("click", function() {
 });
 
 // Провести честное голосование
-
 let votes = [],
   trueVoteBtn = document.querySelector("#voting"),
   isVoted = false;
@@ -264,13 +255,11 @@ trueVoteBtn.addEventListener("click", function() {
 });
 
 // Получение рандомного числа
-
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // Сброс результатов
-
 let resetBtn = document.querySelector("#reset");
 
 resetBtn.addEventListener("click", function() {
@@ -294,7 +283,6 @@ resetBtn.addEventListener("click", function() {
 });
 
 // Вмешаться в выборы
-
 let crime = document.querySelector("#crime");
 
 crime.addEventListener("click", function() {

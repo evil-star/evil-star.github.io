@@ -1,0 +1,61 @@
+// Перевод px в rem
+@function calculateRem($size)
+  $remSize: $size / 16px
+  @return $remSize * 1rem
+
+@mixin fz($size)
+  font-size: $size
+  font-size: calculateRem($size)
+
+// Центрирование абсолютом
+@mixin center($position)
+  position: absolute
+  @if $position == "vertical"
+    top: 50%
+    -webkit-transform: translateY(-50%)
+    -ms-transform: translateY(-50%)
+    transform: translateY(-50%)
+  @else if $position == "horizontal"
+    left: 50%
+    -webkit-transform: translateX(-50%)
+    -ms-transform: translateX(-50%)
+    transform: translate(-50%)
+  @else if $position == "both"
+    top: 50%
+    left: 50%
+    -webkit-transform: translate(-50%, -50%)
+    -ms-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+
+// Плейсхолдеры
+@mixin placeholder
+  &.placeholder
+    @content
+
+  &:-moz-placeholder
+    @content
+
+  &::-moz-placeholder
+    @content
+
+  &:-ms-input-placeholder
+    @content
+
+  &::-webkit-input-placeholder
+    @content
+
+// Пропорциональное изменение размера блока
+@mixin ratio($width, $height) 
+    position: relative
+    overflow: hidden
+    padding-top: ($height / $width) * 100%
+    > iframe
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      border: 0 
+// Использование:
+// .iframe-container
+//   +ratio(16,9)

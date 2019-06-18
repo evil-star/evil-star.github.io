@@ -1,0 +1,46 @@
+@import "vars"
+
+@media screen and (max-width: 1500px)
+  .portfolio-item
+    width: 33.3333%
+
+@media screen and (max-width: 992px)
+  header
+    font-size: 14px
+    height: 53vh
+  .portfolio
+    &-item
+      padding: 10px
+      &-overlay
+        padding: 10px
+        font-size: 15px
+        .btn
+          bottom: 10px
+          left: 10px
+        p, .btn, &:after
+          opacity: 1
+        p
+          top: 0
+@media screen and (max-width: 720px)
+  header
+    font-size: 12px
+  .portfolio-item
+    width: 50%
+@media screen and (max-width: 540px)
+  header
+    font-size: 10px
+  .portfolio
+    &-item
+      .btn
+        padding: 3px 8px
+      &-overlay
+        font-size: 10px
+
+@media screen and (max-width: 400px)
+  .portfolio
+    &-item
+      width: 100%
+      .btn
+        padding: 3px 8px
+      &-overlay
+        font-size: 16px

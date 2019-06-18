@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Игорь Веб-разработчик</title>
+    <meta name="description" content="Сайт-портфолио веб-разработчика" />
+
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="img/favicon.png" />
+    <meta property="og:image" content="img/og.jpg" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/main.min.css?v=2" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="container">
+        <div class="social-links">
+          <a target="_blank" href="https://vk.me/igorb_dev"
+            ><img src="img/_src/vk.svg" alt="VK"
+          /></a>
+          <a target="_blank" href="mailto:igor.bakin.v@gmail.com"
+            ><img src="img/_src/email.svg" alt="Email"
+          /></a>
+          <a
+            target="_blank"
+            href="https://api.whatsapp.com/send?phone=79196951324"
+            ><img src="img/_src/wa.svg" alt="Whatsapp"
+          /></a>
+        </div>
+      </div>
+    </nav>
+    <header class="container">
+      <h1>
+        Привет, Я Игорь, <br />
+        Веб-Разработчик. <br />
+        Чем могу помочь?
+        <span>В данный момент свободен для вашего проекта</span>
+      </h1>
+    </header>
+
+    <main></main>
+
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a target="_blank" href="https://vk.me/igorb_dev"
+            ><img src="img/_src/vk.svg" alt="VK"
+          /></a>
+          <a target="_blank" href="mailto:igor.bakin.v@gmail.com"
+            ><img src="img/_src/email.svg" alt="Email"
+          /></a>
+          <a
+            target="_blank"
+            href="https://api.whatsapp.com/send?phone=79196951324"
+            ><img src="img/_src/wa.svg" alt="Whatsapp"
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Работы портфолио
+      var portfolio = [
+        {
+          title: "Финка НКВД",
+          img: "knife.jpg",
+          link: "http://previews.conture.ru/knife/"
+        },
+        {
+          title: "Тренинг шеф поваров Yeschef",
+          img: "yeschef.jpg",
+          link: "http://conture.ru/portfolio/yeschef/index.html"
+        },
+        {
+          title: "Хаски и проказа тур",
+          img: "haski.jpg",
+          link: "http://previews.conture.ru/haski/"
+        },
+        {
+          title: "Онлайн школа Максима Ульянова",
+          img: "ulyanov.jpg",
+          link: "https://evil-star.github.io/ulyanov/app/"
+        },
+        {
+          title: "Металлообработка ЛС-Металл",
+          img: "ls-metal.jpg",
+          link: "http://conture.ru/portfolio/ls-metal/index.html"
+        },
+        {
+          title: "Выкуп квартир",
+          img: "vikup.jpg",
+          link: "http://conture.ru/portfolio/vikup/index.html"
+        },
+        {
+          title: "Производство штор и жалюзи",
+          img: "jaluzi.jpg",
+          link: "http://conture.ru/portfolio/jaluzi/index.html"
+        },
+        {
+          title: "АльпСервис",
+          img: "alpservice.jpg",
+          link: "http://previews.conture.ru/alpservice/"
+        },
+        {
+          title: "Установка TV",
+          img: "tv.jpg",
+          link: "http://previews.conture.ru/anteni/"
+        },
+        {
+          title: "Агенство уникальных событий",
+          img: "creative.jpg",
+          link: "http://previews.conture.ru/creative/"
+        },
+        {
+          title: "Груша Петровская",
+          img: "grusha.jpg",
+          link: "http://previews.conture.ru/grusha/"
+        },
+        {
+          title: "Хостелы Золотое кольцо",
+          img: "hostels.jpg",
+          link: "http://previews.conture.ru/hostels/"
+        },
+        {
+          title: "Замок Кощея",
+          img: "koshey.jpg",
+          link: "http://previews.conture.ru/koshey/"
+        },
+        {
+          title: "Марина Римарчук",
+          img: "kouch.jpg",
+          link: "http://previews.conture.ru/kouch/"
+        },
+        {
+          title: "Mobil 1 Центр",
+          img: "mobil.jpg",
+          link: "http://previews.conture.ru/mobil/"
+        },
+        {
+          title: "Original Dance",
+          img: "dance.jpg",
+          link: "http://previews.conture.ru/original-dance/"
+        },
+        {
+          title: "Тротуарная плитка",
+          img: "plitka.jpg",
+          link: "http://previews.conture.ru/plitka/"
+        },
+        {
+          title: "Цирк Премьер",
+          img: "tsirk.jpg",
+          link: "http://previews.conture.ru/tsirk/"
+        },
+        {
+          title: "Монтаж видеонаблюдения",
+          img: "video.jpg",
+          link: "http://previews.conture.ru/video/"
+        },
+        {
+          title: "Vijay academy",
+          img: "vijay.jpg",
+          link: "http://previews.conture.ru/vijay/"
+        }
+      ];
+
+      var portfolioContainer = document.querySelector("main");
+
+      portfolio.map(function(portfolioItem) {
+        var el = document.createElement("div");
+        el.className = "portfolio-item";
+        el.innerHTML =
+          "<div class='portfolio-item-inner'>" +
+          "<div class='portfolio-item-overlay'>" +
+          "<p>" +
+          portfolioItem.title +
+          "</p>" +
+          "<a target='_blank' href='" +
+          portfolioItem.link +
+          "' class='btn'>Перейти</a>" +
+          "</div>" +
+          "<img src='data:image/gif;base64,R0lGODlhiQBaAIAAAP///wAAACH5BAEAAAEALAAAAACJAFoAAAKDjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QmKVQAAOw==' data-src='img/_src/" +
+          portfolioItem.img +
+          "' />" +
+          "</div>";
+        portfolioContainer.appendChild(el);
+      });
+    </script>
+    <script src="js/scripts.min.js?v=2"></script>
+  </body>
+</html>
