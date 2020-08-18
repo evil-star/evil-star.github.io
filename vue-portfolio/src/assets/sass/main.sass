@@ -1,11 +1,25 @@
 @import "@/assets/sass/variables"
 
+// Fonts
+@import "https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap&subset=cyrillic"
+@import "https://fonts.googleapis.com/css?family=Merriweather:400i&display=swap"
+@import "@/assets/sass/fontello"
+
+#app
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: #fff
+
 body
 	font-family: 'Montserrat', sans-serif
 	color: #212121
+	background-color: #fff
 	
 .container
-	max-width: 1700px
+	max-width: 1500px
 	padding: 0 25px
 	margin: 0 auto
 
@@ -17,16 +31,44 @@ body
 	cursor: pointer
 	span
 		height: 1px
-		background: #000
+		background: #fff
 		width: 18px
 		&:nth-child(1)
 			margin-bottom: 8px
 
-/* width */
-::-webkit-scrollbar 
-	width: 7px
+#main-scroll
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
 
-/* Handle */
-::-webkit-scrollbar-thumb 
-	background: $accent
-	border-radius: 10px
+.skewScroll
+	transition: transform .2s ease-out
+	
+.sub-text
+	color: #717171
+
+.hero
+	margin-bottom: 20vh
+	&__subtitle
+		font-size: 2.5rem
+		font-weight: bold
+		line-height: 112%
+	&__button
+		margin-top: 4vh
+
+.social-link
+	vertical-align: middle
+	color: #fff
+	font-size: 1em
+	background-color: transparent
+	border-radius: 50%
+	width: 2em
+	height: 2em
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	&:hover
+		color: #000000
+		background-color: #fff

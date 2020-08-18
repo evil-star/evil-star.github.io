@@ -15,7 +15,7 @@ export default {
 	font-family: 'Merriweather', serif
 	font-size: 30px
 	position: relative
-	color: #212121
+	color: #fff
 	text-decoration: none
 	display: block
 	&:before, &:after
@@ -25,7 +25,7 @@ export default {
 		left: 0
 		width: 100%
 		height: 1px
-		background: #212121
+		background: #fff
 	&:before
 		transition: transform .2s ease-in
 		transform-origin: 100% 50%

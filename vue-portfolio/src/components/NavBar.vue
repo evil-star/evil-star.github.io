@@ -1,27 +1,23 @@
 <template>
-	<div>
-		<header class="header">
-			<div class="container">
-				<div class="header__inner">
-					<logo></logo>
-					<div class="burger">
-						<span></span><span></span>
-					</div>
-				</div>
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<logo></logo>
+				<div class="burger"><span></span><span></span></div>
 			</div>
-		</header>
-	</div>
+		</div>
+	</header>
 </template>
 
 <script>
-import Logo from '@/components/Logo'
+import Logo from "@/components/Logo";
 
 export default {
-	name: 'NavBar',
+	name: "NavBar",
 	components: {
-		Logo
-	}
-}
+		Logo,
+	},
+};
 </script>
 
 <style lang="sass">
@@ -30,6 +26,8 @@ export default {
 	top: 0
 	left: 0
 	width: 100%
+	z-index: 100
+	mix-blend-mode: difference
 	&__inner
 		padding: 15px 0
 		display: flex

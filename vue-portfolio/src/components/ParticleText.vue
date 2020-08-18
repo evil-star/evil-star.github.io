@@ -1,134 +1,99 @@
 <template>
-	<div ref="container">
-		<canvas ref="scene" class="scene"></canvas>
-	</div>
+	<canvas ref="scene" class="scene"></canvas>
 </template>
 
 <script>
+import TextParticle from '@/constructors/TextParticle'
+
 export default {
 	name: "ParticleText",
-	props: ['text'],
-	mounted() {
-		var canvas = this.$refs.scene,
-			ctx = canvas.getContext("2d"),
-			particles = [],
-			amount = 0,
-			mouse = { x: 0, y: 0 },
-			radius = 1,
-			text = this.text,
-			container = this.$refs.container,
-			canvasOffset = canvas.getBoundingClientRect();
-
-		var colors = ["#000"];
-
-		var ww = (canvas.width = container.offsetWidth);
-		var wh = (canvas.height = window.innerHeight / 2);
-
-		function Particle(x, y) {
-			this.x = x;
-			this.y = y;
-			this.dest = {
-				x: x,
-				y: y ,
-			};
-			this.r = 5;
-			this.vx = (Math.random() - 0.5) * 20;
-			this.vy = (Math.random() - 0.5) * 20;
-			this.accX = 0;
-			this.accY = 0;
-			this.friction = Math.random() * 0.005 + 0.94;
-
-			this.color = colors[Math.floor(Math.random() * 6)];
-		}
-
-		Particle.prototype.render = function() {
-			this.accX = (this.dest.x - this.x) / 500;
-			this.accY = (this.dest.y - this.y) / 500;
-			this.vx += this.accX;
-			this.vy += this.accY;
-			this.vx *= this.friction;
-			this.vy *= this.friction;
-
-			this.x += this.vx;
-			this.y += this.vy;
-
-			ctx.fillStyle = this.color;
-			ctx.beginPath();
-			ctx.arc(this.x, this.y, this.r, Math.PI * 2, false);
-			ctx.fill();
-
-			var a = this.x - mouse.x;
-			var b = this.y - mouse.y;
-
-			var distance = Math.sqrt(a * a + b * b);
-			if (distance < radius * 70) {
-				this.accX = (this.x - mouse.x) / 100;
-				this.accY = (this.y - mouse.y) / 100;
-				this.vx += this.accX;
-				this.vy += this.accY;
-			}
+	data() {
+		return {
+			showText: true,
+			mouse: { x: 0, y: 0 },
+			ww: 0,
+			wh: 0,
+			ctx: {},
+			particles: [],
+			colors: ["#000"],
+			textParticle: {},
+			amount: 0,
+			canvasOffset: {},
+			radius: 1
 		};
-
-		function onMouseMove(e) {
-			mouse.x = e.clientX - canvasOffset.left;
-			mouse.y = e.clientY - canvasOffset.top + window.scrollY;
-		}
-
-		function onTouchMove(e) {
+	},
+	props: ["text"],
+	methods: {
+		onMouseMove(e) {
+			this.mouse.x = e.clientX - this.canvasOffset.left;
+			this.mouse.y =
+				e.clientY - this.canvasOffset.top + this.$store.state.page.scroll.y;
+		},
+		onTouchMove(e) {
 			if (e.touches.length > 0) {
-				mouse.x = e.touches[0].clientX - canvasOffset.left;
-				mouse.y = e.touches[0].clientY - canvasOffset.top + window.scrollY;
+				this.mouse.x = e.touches[0].clientX - this.canvasOffset.left;
+				this.mouse.y =
+					e.touches[0].clientY - this.canvasOffset.top + window.scrollY;
 			}
-		}
+		},
+		initScene(e) {
+			this.ww = this.$refs.scene.width = window.innerWidth;
+			this.wh = this.$refs.scene.height = this.$refs.scene.width / 3;
 
-		function onTouchEnd(e) {
-			mouse.x = -9999;
-			mouse.y = -9999;
-		}
+			this.ctx.clearRect(
+				0,
+				0,
+				this.$refs.scene.width,
+				this.$refs.scene.height
+			);
 
-		function onScroll(e) {
-		}
+			this.ctx.font = "bold " + this.ww / 10 + "px sans-serif";
+			this.ctx.textAlign = "center";
+			this.ctx.fillText(this.text, this.ww / 2, this.wh - 260);
 
-		function initScene() {
-			ww = canvas.width = container.offsetWidth;
-			wh = canvas.height = window.innerHeight / 2;
+			var data = this.ctx.getImageData(0, 0, this.ww, this.wh).data;
+			this.ctx.clearRect(
+				0,
+				0,
+				this.$refs.scene.width,
+				this.$refs.scene.height
+			);
+			this.ctx.globalCompositeOperation = "screen";
 
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-			ctx.font = "bold " + ww / 10 + "px sans-serif";
-			ctx.textAlign = "center";
-			ctx.fillText(text, ww / 2, wh / 2);
-
-			var data = ctx.getImageData(0, 0, ww, wh).data;
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.globalCompositeOperation = "screen";
-
-			particles = [];
-			for (var i = 0; i < ww; i += Math.round(ww / 150)) {
-				for (var j = 0; j < wh; j += Math.round(ww / 150)) {
-					if (data[(i + j * ww) * 4 + 3] > 150) {
-						particles.push(new Particle(i, j));
+			this.particles = [];
+			for (var i = 0; i < this.ww; i += Math.round(this.ww / 150)) {
+				for (var j = 0; j < this.wh; j += Math.round(this.ww / 150)) {
+					if (data[(i + j * this.ww) * 4 + 3] > 150) {
+						this.particles.push(new TextParticle(i, j, this.radius, this.colors, this.ctx, this.mouse));
 					}
 				}
 			}
-			amount = particles.length;
-		}
-
-		function render(a) {
-			requestAnimationFrame(render);
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			for (var i = 0; i < amount; i++) {
-				particles[i].render();
+			this.amount = this.particles.length;
+		},
+		onTouchEnd(e) {
+			mouse.x = -9999;
+			mouse.y = -9999;
+		},
+		render(a) {
+			requestAnimationFrame(this.render);
+			this.ctx.clearRect(0, 0, this.$refs.scene.width, this.$refs.scene.height);
+			for (var i = 0; i < this.amount; i++) {
+				this.particles[i].render();
 			}
-		}
+		},
+	},
+	mounted() {
+		this.canvasOffset = this.$refs.scene.getBoundingClientRect();
+		this.ctx = this.$refs.scene.getContext("2d");
+		this.ww = this.$refs.scene.width = window.innerWidth;
+		this.vh = this.$refs.scene.height = this.$refs.scene.width / 3;
 
-		window.addEventListener("resize", initScene);
-		window.addEventListener("mousemove", onMouseMove);
-		window.addEventListener("touchmove", onTouchMove);
-		window.addEventListener("touchend", onTouchEnd);
-		window.addEventListener("scroll", onScroll);
-		initScene();
-		requestAnimationFrame(render);
+		window.addEventListener("resize", (e) => initScene(e));
+		window.addEventListener("mousemove", (e) => this.onMouseMove(e));
+		window.addEventListener("touchmove", (e) => this.onTouchMove(e));
+		window.addEventListener("touchend", (e) => this.onTouchEnd(e));
+		this.initScene();
+		requestAnimationFrame(this.render);
 	},
 };
 </script>
